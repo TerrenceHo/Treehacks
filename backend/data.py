@@ -1,0 +1,6 @@
+data = {
+
+}
+
+def load():
+    pass
