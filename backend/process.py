@@ -1,15 +1,21 @@
 import numpy as np
 
-with open("glove.6B.50d.txt", "rb") as lines:
-    w2v = {line.split()[0]: np.array(map(float, line.split()[1:]))
+with open("../w2v_data/glove.6B.100d.txt", "rb") as lines:
+    w2v = {line.split()[0]: np.array(line.split()[1:], dtype=np.float32)
            for line in lines}
 
-with open("glove.6B.50d.txt", "rb") as lines:
-    for count, line in enumerate(lines):
-        if count < 10:
-            print(line.split()[1:])
+print("Done loading data")
 
-print("Done")
+with open("../w2v_data/glove.6B.100d.txt", "rb") as lines:
+	for count, line in enumerate(lines):
+		if count < 5:
+			print(line.split()[1:])
+			print(np.array(line.split()[1:], dtype=np.float32)) 
+
+#with open("glove.6B.50d.txt", "rb") as lines:
+#    for count, line in enumerate(lines):
+#        if count < 10:
+#            print(line.split()[1:])
 
 class TfidfEmbeddingVectorizer(object):
     def __init__(self, word2vec):
