@@ -2,6 +2,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
+@app.route('/')
+def root():
+    return "Test!"
+
 @app.route('/federal/geographic')
 def federal_geographic():
     pass
@@ -14,7 +18,7 @@ def federal_issue():
 def state_geographic():
     pass
 
-@app.route('local/temporal')
+@app.route('/local/temporal')
 def local_temporal():
     pass
 

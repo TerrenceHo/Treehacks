@@ -1,5 +1,7 @@
 data = {
-
+    "users": {
+        
+    }
 }
 
 def load():
